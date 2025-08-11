@@ -1,4 +1,4 @@
-public class MainPerso {
+public class MainPersonagem.java {
     public static void main(String[] args) {
         Personagem guerreiro = new Personagem("Arthas", "Guerreiro");
         Personagem mago = new Personagem("Merlin", "Mago");
