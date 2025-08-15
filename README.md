@@ -14,14 +14,14 @@ Este projeto tem como foco:
 ## 📦 Estrutura Inicial
 
 ```java
-public class Personagem {
+public class Classes.Personagem {
     String nome;
     String classe;
     int vida;
     int forca;
     int nivel;
 
-    public Personagem(String nome, String classe) {
+    public Classes.Personagem(String nome, String classe) {
         this.nome = nome;
         this.classe = classe;
         this.nivel = 1;
@@ -29,19 +29,21 @@ public class Personagem {
         this.forca = 10;
     }
 
-    public void exibirStatus() { ... }
+    public void exibirStatus() { ...}
 
-    public void atacar(Personagem inimigo) { ... }
+    public void atacar(Classes.Personagem inimigo) { ...}
 
-    public void subirNivel() { ... }
+    public void subirNivel() { ...}
 }
 ```
 
 ```java
+import Classes.Personagem;
+
 public class MainPerso {
     public static void main(String[] args) {
-        Personagem guerreiro = new Personagem("Arthas", "Guerreiro");
-        Personagem mago = new Personagem("Merlin", "Mago");
+        Personagem guerreiro = new Personagem("Arthas", "Classes.Guerreiro");
+        Personagem mago = new Personagem("Merlin", "Classes.Mago");
 
         guerreiro.exibirStatus();
         mago.exibirStatus();
@@ -73,7 +75,7 @@ public class MainPerso {
 | 🧟 Inimigos com IA simples     | Criar classe `Inimigo` com comportamento automático |
 | 🗺️ Sistema de mapa textual     | Criar menus e opções de exploração via terminal |
 | 🕹️ Batalha por turnos         | Implementar loop de combate com escolhas |
-| 👥 Múltiplos personagens       | Usar `ArrayList<Personagem>` para formar grupos |
+| 👥 Múltiplos personagens       | Usar `ArrayList<Classes.Personagem>` para formar grupos |
 
 
 ## 📚 Aprendizados
