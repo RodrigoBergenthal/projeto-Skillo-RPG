@@ -85,4 +85,19 @@ Este projeto é ideal para entender:
 - Interação entre objetos.
 - Evolução de sistemas orientados a objetos.
 
+Legal! Vamos montar um sistema de **pedra-papel-tesoura expandido** com 5 classes de RPG, onde cada uma vence de duas e perde para duas. Isso cria um ciclo equilibrado e estratégico. Aqui está uma sugestão:
+
 ---
+
+### ⚔️ Sistema de Vantagens — RPG 5 Classes
+
+| Classe   | Vence de...         | Perde para...        |
+|----------|---------------------|----------------------|
+| **Bárbaro** | Ladino, Arqueiro     | Mago, Druida         |
+| **Mago**    | Bárbaro, Druida      | Arqueiro, Ladino     |
+| **Arqueiro**| Mago, Druida         | Bárbaro, Ladino      |
+| **Druida**  | Bárbaro, Ladino      | Mago, Arqueiro       |
+| **Ladino**  | Mago, Arqueiro       | Bárbaro, Druida      |
+
+---
+
