@@ -2,13 +2,13 @@ package Classes;
 
 import java.util.Random;
 
-public class Barbaro extends Personagem {
+public class Druida extends Personagem {
     private static final Random random = new Random();
 
-    public Barbaro() {
-        super("Ragnar", "Bárbaro", "Golpe Furioso");
-        setVida(120);
-        setEnergia(15);
+    public Druida() {
+        super("Lilith", "Druida", "Árvore Espiritual");
+        setVida(100);
+        setEnergia(50);
         setDefesa(4);
     }
 
@@ -28,7 +28,7 @@ public class Barbaro extends Personagem {
 
         System.out.println("Dado rolado! Resultado... " + rolagem + "! ");
 
-        if (c.equals("ladino") || c.equals("arqueiro")) {
+        if (c.equals("barbaro") || c.equals("ladino")) {
             dano = (int) (dano + (dano * 0.2));
 
             if (rolagem > 8) {
@@ -45,8 +45,8 @@ public class Barbaro extends Personagem {
         }
 
         if (rolagem >= inimigo.getDefesa()) {
-            System.out.println(getNome() + " com furia avança e fatia " + inimigo.getNome()
-                    + ", com seu machado, causando " + dano + " de dano!");
+            System.out.println(getNome() + " dá uma chicotada contra " + inimigo.getNome()
+                    + ", causando " + dano + " de dano!");
             inimigo.setVida(inimigo.getVida() - dano);
             if (inimigo.getVida() <= 0) {
                 System.out.println(inimigo.getNome() + " foi derrotado!");
@@ -60,11 +60,11 @@ public class Barbaro extends Personagem {
 
     @Override
     public void ataqueEspecial(Personagem inimigo) {
-        int dano = 30;
+        int dano = 20;
         int custoEnergia = 15;
         if (getEnergia() >= custoEnergia) {
-            System.out.println(getNome() + " entra em fúria e golpeia " + inimigo.getNome()
-                    + ", causando " + dano + " de dano!");
+            System.out.println(getNome() + " vira lobisomem e fatia " + inimigo.getNome()
+                    + " com suas garras, causando " + dano + " de dano!");
             inimigo.setVida(inimigo.getVida() - dano);
             setEnergia(getEnergia() - custoEnergia);
             if (inimigo.getVida() <= 0) {

@@ -2,13 +2,14 @@ package Classes;
 
 import java.util.Random;
 
-public class Barbaro extends Personagem {
+//Boa sorte!
+public class Arqueiro extends Personagem {
     private static final Random random = new Random();
 
-    public Barbaro() {
-        super("Ragnar", "Bárbaro", "Golpe Furioso");
-        setVida(120);
-        setEnergia(15);
+    public Arqueiro() {
+        super("Arthar", "Arqueiro", "Chuva de Flechas");
+        setVida(100);
+        setEnergia(30);
         setDefesa(4);
     }
 
@@ -28,7 +29,7 @@ public class Barbaro extends Personagem {
 
         System.out.println("Dado rolado! Resultado... " + rolagem + "! ");
 
-        if (c.equals("ladino") || c.equals("arqueiro")) {
+        if (c.equals("mago") || c.equals("druida")) {
             dano = (int) (dano + (dano * 0.2));
 
             if (rolagem > 8) {
@@ -45,8 +46,8 @@ public class Barbaro extends Personagem {
         }
 
         if (rolagem >= inimigo.getDefesa()) {
-            System.out.println(getNome() + " com furia avança e fatia " + inimigo.getNome()
-                    + ", com seu machado, causando " + dano + " de dano!");
+            System.out.println(getNome() + " lança uma flecha contra " + inimigo.getNome()
+                    + ", e o perfura, causando " + dano + " de dano!");
             inimigo.setVida(inimigo.getVida() - dano);
             if (inimigo.getVida() <= 0) {
                 System.out.println(inimigo.getNome() + " foi derrotado!");
@@ -60,11 +61,11 @@ public class Barbaro extends Personagem {
 
     @Override
     public void ataqueEspecial(Personagem inimigo) {
-        int dano = 30;
-        int custoEnergia = 15;
+        int dano = 12;
+        int custoEnergia = 5;
         if (getEnergia() >= custoEnergia) {
-            System.out.println(getNome() + " entra em fúria e golpeia " + inimigo.getNome()
-                    + ", causando " + dano + " de dano!");
+            System.out.println(getNome() + " atira várias flechas para cima, caindo contra " + inimigo.getNome()
+                    + ", o perfurando múltiplas vezes e causando " + dano + " de dano!");
             inimigo.setVida(inimigo.getVida() - dano);
             setEnergia(getEnergia() - custoEnergia);
             if (inimigo.getVida() <= 0) {
