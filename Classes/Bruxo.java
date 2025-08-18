@@ -2,13 +2,13 @@ package Classes;
 
 import java.util.Random;
 
-public class Barbaro extends Personagem {
+public class Bruxo extends Personagem {
     private static final Random random = new Random();
 
-    public Barbaro() {
-        super("Ragnar", "Bárbaro", "Golpe Furioso");
-        setVida(120);
-        setEnergia(15);
+    public Bruxo() {
+        super("Lilith", "Bruxa", "Necrosar");
+        setVida(100);
+        setEnergia(50);
         setDefesa(12);
     }
 
@@ -25,9 +25,9 @@ public class Barbaro extends Personagem {
         String c = norm(inimigo.getClasse());
         int rolagem;
 
-        if (c.equals("mago") || c.equals("bruxo") || c.equals("bruxa")) {
+        if (c.equals("ladino") || c.equals("guerreiro")) {
             rolagem = random.nextInt(15) + 1;
-        } else if (c.equals("guerreiro") || c.equals("ladino")) {
+        } else if (c.equals("barbaro") || c.equals("mago")) {
             rolagem = random.nextInt(26) + 1;
         } else {
             rolagem = random.nextInt(20) + 1;
@@ -35,24 +35,24 @@ public class Barbaro extends Personagem {
 
         System.out.println("Dado rolado! Resultado... " + rolagem + "!");
         if (rolagem >= inimigo.getDefesa()) {
-            System.out.println(getNome() + " ataca " + inimigo.getNome()
-                    + " com seu machado, causando " + dano + " de dano!");
+            System.out.println(getNome() + " lança um feitiço em " + inimigo.getNome()
+                    + ", causando " + dano + " de dano!");
             inimigo.setVida(inimigo.getVida() - dano);
             if (inimigo.getVida() <= 0) {
                 System.out.println(inimigo.getNome() + " foi derrotado!");
             }
         } else {
-            System.out.println(getNome() + " errou o ataque!");
+            System.out.println(getNome() + " tentou acertar o inimigo, mas errou!");
         }
     }
 
     @Override
     public void ataqueEspecial(Personagem inimigo) {
-        int dano = 30;
+        int dano = 20;
         int custoEnergia = 15;
         if (getEnergia() >= custoEnergia) {
-            System.out.println(getNome() + " entra em fúria e golpeia " + inimigo.getNome()
-                    + ", causando " + dano + " de dano!");
+            System.out.println(getNome() + " aponta o dedo para " + inimigo.getNome()
+                    + " e o corpo dele definha, causando " + dano + " de dano!");
             inimigo.setVida(inimigo.getVida() - dano);
             setEnergia(getEnergia() - custoEnergia);
             if (inimigo.getVida() <= 0) {
