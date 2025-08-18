@@ -10,7 +10,7 @@ public class Mago extends Personagem {
         super("Merlim", "Maga", "EXPLOSÃO!");
         setVida(60);
         setEnergia(100);
-        setDefesa(9);
+        setDefesa(4);
     }
 
     private static String norm(String s) {
@@ -24,25 +24,37 @@ public class Mago extends Personagem {
     public void atacar(Personagem inimigo) {
         int dano = 10;
         String c = norm(inimigo.getClasse());
-        int rolagem;
 
-        if (c.equals("ladino") || c.equals("bruxo") || c.equals("bruxa")) {
-            rolagem = random.nextInt(15) + 1;
-        } else if (c.equals("barbaro") || c.equals("guerreiro")) {
-            rolagem = random.nextInt(26) + 1;
-        } else {
-            rolagem = random.nextInt(20) + 1;
+        int rolagem = random.nextInt(10) + 1;
+
+        System.out.println("Dado rolado! Resultado... " + rolagem + "! ");
+
+        if (c.equals("barbaro") || c.equals("druida")) {
+            dano = (int) (dano + (dano * 0.2));
+
+            if (rolagem > 8) {
+                System.out.print(" Crítico!\n");
+                dano += (int) ((dano * getCritico()));
+            }
         }
 
-        System.out.println("Dado rolado! Resultado... " + rolagem + "!");
+        else {
+            if (rolagem > 8) {
+                System.out.print(" Crítico!\n");
+                dano += (int) ((dano * getCritico()));
+            }
+        }
+
         if (rolagem >= inimigo.getDefesa()) {
-            System.out.println(getNome() + " arremessa um míssil mágico contra " + inimigo.getNome()
-                    + ", e o perfura com a adaga, causando " + dano + " de dano!");
+            System.out.println(getNome() + " lança uma flecha contra " + inimigo.getNome()
+                    + ", e o perfura, causando " + dano + " de dano!");
             inimigo.setVida(inimigo.getVida() - dano);
             if (inimigo.getVida() <= 0) {
                 System.out.println(inimigo.getNome() + " foi derrotado!");
             }
-        } else {
+        }
+
+        else {
             System.out.println(getNome() + " tentou acertar o inimigo, mas errou!");
         }
     }

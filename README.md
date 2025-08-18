@@ -42,7 +42,7 @@ import Classes.Personagem;
 
 public class MainPerso {
     public static void main(String[] args) {
-        Personagem guerreiro = new Personagem("Arthas", "Classes.Guerreiro");
+        Personagem guerreiro = new Personagem("Arthas", "Classes.Arqueiro");
         Personagem mago = new Personagem("Merlin", "Classes.Mago");
 
         guerreiro.exibirStatus();

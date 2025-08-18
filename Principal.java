@@ -9,20 +9,15 @@ public class Principal {
         Scanner scan = new Scanner(System.in);
         int turno = 1;
         int opcao;
+        String valor = "2";
 
         System.out.println("Em uma arena, existem cinco personagens espalhados...\n" +
                 "1-Ragnar, o Bárbaro.\n" +
                 "2-Merlim, a Maga.\n" +
-                "3-Arthar, o Guerreiro.\n" +
+                "3-Arthar, o Arqueiro.\n" +
                 "4-Ankhler, o Ladino.\n" +
-                "5-Lilith, a Bruxa.\n" +
-                "Sabe-se que:\n" +
-                "- Bárbaro: difícil combater à distância, fácil corpo-a-corpo.\n" +
-                "- Mago: fácil corpo-a-corpo, difícil prever ágeis.\n" +
-                "- Guerreiro: fácil contra quem consegue defender, difícil contra fortões.\n" +
-                "- Ladino: fácil à distância, sofre corpo-a-corpo.\n" +
-                "- Bruxo: fácil corpo-a-corpo e contra magia mundana, difícil contra ágeis e bem defendidos.\n" +
-                "\nSelecione seu personagem:");
+                "5-Lilith, a Drúida.\n" +
+                "Selecione seu heroi!");
         opcao = scan.nextInt();
 
         switch (opcao) {
@@ -103,7 +98,7 @@ public class Principal {
                 else System.out.println("Você venceu!");
             }
             case 3 -> {
-                Personagem jogador = new Guerreiro();
+                Personagem jogador = new Arqueiro();
                 Personagem inimigo = EscolheInimigo.escolheInimigo();
                 System.out.println("Seu inimigo é: " + inimigo.getNome() + " (" + inimigo.getClasse() + ")");
 
@@ -179,7 +174,7 @@ public class Principal {
                 else System.out.println("Você venceu!");
             }
             case 5 -> {
-                Personagem jogador = new Bruxo();
+                Personagem jogador = new Druida();
                 Personagem inimigo = EscolheInimigo.escolheInimigo();
                 System.out.println("Seu inimigo é: " + inimigo.getNome() + " (" + inimigo.getClasse() + ")");
 

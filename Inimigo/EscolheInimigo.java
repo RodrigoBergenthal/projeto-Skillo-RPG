@@ -1,12 +1,11 @@
 package Inimigo;
 
 import Classes.Barbaro;
-import Classes.Bruxo;
-import Classes.Guerreiro;
+import Classes.Druida;
+import Classes.Arqueiro;
 import Classes.Mago;
 import Classes.Ladino;
 import Classes.Personagem;
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.Random;
 
@@ -22,13 +21,13 @@ public class EscolheInimigo {
                 inimigo = new Barbaro();
             }
             case 2 -> {
-                inimigo = new Bruxo();
+                inimigo = new Druida();
             }
             case 3 -> {
                 inimigo = new Ladino();
             }
             case 4 -> {
-                inimigo = new Guerreiro();
+                inimigo = new Arqueiro();
             }
             case 5 -> {
                 inimigo = new Mago();

@@ -7,6 +7,7 @@ public class Personagem {
     private int energia;
     private int defesa;
     private String especial;
+    private double critico;
 
 
     public Personagem(String nome, String classe, String especial) {
@@ -15,28 +16,42 @@ public class Personagem {
         this.especial = especial;
         this.vida = 100;
         this.energia = 50;
-        this.defesa = 10;
+        this.defesa = 4;
+        this.critico = 0.3;
     }
 
+    public double getCritico() {
+        return critico;
+    }
+
+    public void setCritico(double critico) {
+        this.critico = critico;
+    }
 
     public String getNome() {
         return nome;
     }
+
     public String getClasse() {
         return classe;
     }
+
     public int getVida() {
         return vida;
     }
+
     public int getEnergia() {
         return energia;
     }
+
     public String getEspecial() {
         return especial;
     }
+
     public void setDefesa(int defesa) {
         this.defesa = defesa;
     }
+
     public int getDefesa() {
         return defesa;
     }
@@ -45,8 +60,8 @@ public class Personagem {
     public void setVida(int vida) {
         this.vida = Math.max(vida, 0);
     }
-    public void setEnergia(int energia)
-    {
+
+    public void setEnergia(int energia) {
         this.energia = Math.max(energia, 0);
     }
 
@@ -66,9 +81,5 @@ public class Personagem {
 
     public void ataqueEspecial(Personagem inimigo) {
         System.out.println(nome + " tenta usar " + especial + ", mas o efeito não está definido.");
-    }
-
-    public void setNome(String Ser) {
-        Ser = nome;
     }
 }
