@@ -59,12 +59,11 @@ public class MainPerso {
 
 ## ✅ Funcionalidades Atuais
 
-- Criação de personagens com nome e classe.
-- Exibição de status (vida, força, nível).
+- Criação de personagens com nome e classe predefinidos.
+- Exibição de status (vida, força, energia, etc).
 - Sistema de ataque entre personagens.
-- Evolução de nível com aumento de atributos.
 
-## 🚀 Possibilidades de Expansão
+## 🚀 Possibilidades de Expansão Futura para Outras Versões
 
 | Funcionalidade                  | Como implementar? |
 |--------------------------------|--------------------|
